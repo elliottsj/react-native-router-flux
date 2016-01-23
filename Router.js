@@ -7,9 +7,11 @@
  *
  */
 
+import debugLib from 'debug';
+const debug = debugLib('react-native-router-flux:Router');
+
 import Route from './Route';
 import Actions from './Actions';
-import debug from './debug';
 
 export class RouterDelegate {
     onPush(name:string, props:{ [key: string]: any}):boolean {

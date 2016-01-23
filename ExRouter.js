@@ -1,3 +1,6 @@
+import debugLib from 'debug';
+const debug = debugLib('react-native-router-flux:ExRouter');
+
 import React from 'react-native';
 import Router from './Router';
 import Route from './Route';
@@ -9,7 +12,7 @@ import Animations from './Animations';
 const {TouchableOpacity, Navigator, StyleSheet, View, Text} = React;
 import ReactRouter from './ReactRouter';
 import Actions from './Actions';
-import debug from './debug';
+
 
 export class ExRouteAdapter {
     name: string;
@@ -95,7 +98,7 @@ export class ExRouteAdapter {
                   style={[ExNavigator.Styles.barLeftButtonText, this.route.props.leftButtonTextStyle]}>{this.route.props.leftTitle}</Text>
             </TouchableOpacity>);
         }
-        
+
         if (index === 0 || index < navigator.getCurrentRoutes().length-1) {
             return null;
         }
@@ -307,4 +310,3 @@ var styles = StyleSheet.create({
     },
 
 });
-

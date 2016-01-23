@@ -1,6 +1,8 @@
+import debugLib from 'debug';
+const debug = debugLib('react-native-router-flux:Actions');
+
 import Route from './Route';
 import Router from './Router';
-import debug from './debug';
 
 function isNumeric(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -58,7 +60,7 @@ class Actions {
             debug("Switching to router="+router.name);
         }
         if (router.route(name, props)){
-            
+
             // deep into child router
             while (router.currentRoute.childRouter){
                 router = router.currentRoute.childRouter;
